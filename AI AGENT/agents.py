@@ -2,9 +2,9 @@ from openai import OpenAI
 from tools.get_schema import get_schema
 from tools.execute_sql import execute_sql
 from tools.validate_sql import validate_sql
-from tools.format_sql import format_results
+# from tools.format_sql import format_results
 
-OpenAI(api_key="AIzaSyBKVQeXfyzZ6hWwkshJuLuvSkO9jJWq9gE")
+ client= OpenAI(api_key="AIzaSyBKVQeXfyzZ6hWwkshJuLuvSkO9jJWq9gE")
 
 def sql_agent(question: str):
     schema = get_schema()
@@ -40,3 +40,4 @@ User Question:
     formatted_result = format_results(result)
 
     return f"SQL Query:\n{sql_query}\n\n Result:\n{formatted_result}"
+
